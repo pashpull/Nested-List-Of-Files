@@ -4,11 +4,10 @@ import { useAppDispatch, useAppSelector } from '../../hooks/hooksForRedux';
 import './Main-Table.css';
 
 import IFile from '../../interfaces/IFile';
-import IDirectory from '../../interfaces/IDirectory';
 import { setAsideNavState } from '../../store/slices/asideNavSlice';
 
 const MainTable = () => {
-  const [files, setFiles] = useState([]);
+  const [files, setFiles] = useState<IFile[]>([]);
 
   const actualContent = useAppSelector((state) => state.data.actualContent);
 
@@ -17,9 +16,9 @@ const MainTable = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    setFiles(
-      actualContent.filter((dir: IFile | IDirectory) => dir.type === 'file')
-    );
+    if (actualContent) {
+      setFiles(actualContent.filter((dir: IFile) => dir.type === 'file'));
+    }
   }, [actualContent]);
 
   return (

@@ -1,17 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
+import IFile from '../../interfaces/IFile';
+import IDirectory from '../../interfaces/IDirectory';
 
 interface IDataState {
   isLoading: boolean;
-  data: [];
+  data?: IDirectory;
   actualListName: string;
-  actualContent: [];
+  actualContent?: IFile[];
 }
 
 const initialState: IDataState = {
   isLoading: true,
-  data: [],
   actualListName: '',
-  actualContent: [],
 };
 
 const dataSlice = createSlice({

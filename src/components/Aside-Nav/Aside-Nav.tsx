@@ -28,7 +28,9 @@ const AsideNav = () => {
         {isLoading ? (
           <li>Loading in progress...</li>
         ) : (
-          <NavLevel list={data.contents} title={data.name} type={data.type} />
+          data && (
+            <NavLevel list={data.contents} title={data.name} type={data.type} />
+          )
         )}
       </ul>
     </aside>

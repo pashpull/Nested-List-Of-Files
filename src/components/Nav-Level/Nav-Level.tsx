@@ -29,7 +29,11 @@ const NavLevel = ({ list, title, type }: NavLevelProps) => {
   const levelHandler = (e: any) => {
     e.stopPropagation();
     dispatch(setActualListName(title));
-    dispatch(setActualContent(list));
+    dispatch(
+      setActualContent(
+        list.filter((file: IFile | IDirectory) => file.type === 'file')
+      )
+    );
     setLevelState(!levelState);
   };
 
