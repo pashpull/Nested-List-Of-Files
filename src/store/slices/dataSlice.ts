@@ -2,16 +2,16 @@ import { createSlice } from '@reduxjs/toolkit';
 
 interface IDataState {
   isLoading: boolean;
-  data: {};
-  report: {};
+  data: [];
   actualListName: string;
+  actualContent: [];
 }
 
 const initialState: IDataState = {
   isLoading: true,
-  data: {},
-  report: {},
+  data: [],
   actualListName: '',
+  actualContent: [],
 };
 
 const dataSlice = createSlice({
@@ -22,15 +22,18 @@ const dataSlice = createSlice({
       state.isLoading = true;
     },
     setData(state, action) {
-      state.data = action.payload[0].contents;
-      state.report = action.payload[1];
+      state.data = action.payload[0];
       state.isLoading = false;
     },
     setActualListName(state, action) {
       state.actualListName = action.payload;
     },
+    setActualContent(state, action) {
+      state.actualContent = action.payload;
+    },
   },
 });
 
-export const { dataRequest, setData, setActualListName } = dataSlice.actions;
+export const { dataRequest, setData, setActualListName, setActualContent } =
+  dataSlice.actions;
 export default dataSlice.reducer;

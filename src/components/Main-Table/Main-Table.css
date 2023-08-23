@@ -1,6 +1,47 @@
 .main-table {
-  max-height: 100vh;
+  position: relative;
+  height: 100vh;
   overflow-y: scroll;
   flex-grow: 1;
   border: 2px solid #000;
+  overflow-x: hidden;
+  min-width: 375px;
+}
+
+.main-table__nav-btn {
+  position: fixed;
+  right: 30px;
+  bottom: 10px;
+  width: fit-content;
+  z-index: 10;
+  border: none;
+  border-radius: 5px;
+  background-color: blueviolet;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.main-table__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.title-row {
+  position: sticky;
+  top: 0;
+}
+
+.main-table__row th {
+  background-color: gray;
+  padding: 5px;
+}
+
+.main-table__cell {
+  padding: 3px;
+  width: 33.333%;
+  border: 1px solid #000;
+  border-top: none;
+  word-break: break-all;
+  width: max-content;
+  min-width: 134px;
 }
