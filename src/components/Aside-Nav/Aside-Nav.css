@@ -1,0 +1,12 @@
+.aside-nav {
+  width: 30%;
+  min-width: max-content;
+  border: 2px solid #000;
+  height: 100vh;
+  overflow: auto;
+}
+
+.aside-nav__nav-list {
+  width: max-content;
+  list-style-type: none;
+}

@@ -1,0 +1,6 @@
+.main-table {
+  max-height: 100vh;
+  overflow-y: scroll;
+  flex-grow: 1;
+  border: 2px solid #000;
+}

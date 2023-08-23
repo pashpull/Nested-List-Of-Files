@@ -1,0 +1,21 @@
+.nav-level {
+  cursor: pointer;
+  width: fit-content;
+}
+
+.nav-level__list {
+  list-style-type: none;
+  padding-left: 10px;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+}
+
+.nav-level_active > .nav-level__list {
+  height: fit-content;
+  width: max-content;
+}
+
+.open {
+  background-color: brown;
+}
